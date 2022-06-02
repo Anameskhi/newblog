@@ -34,13 +34,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_130817) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "username"
-    t.string "email"
-    t.string "password"
-  end
+  # create_table "users", force: :cascade do |t|
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.string "username"
+  #   t.string "email"
+  #   t.string "password"
+  # end
 
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
