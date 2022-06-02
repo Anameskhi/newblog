@@ -16183,3 +16183,191 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 24ms (Views: 17.4ms | ActiveRecord: 1.3ms | Allocations: 20339)
 
 
+Started GET "/register" for 127.0.0.1 at 2022-06-02 17:31:08 +0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 495)
+  Rendered main/_navbar.html.erb (Duration: 1.6ms | Allocations: 928)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 40301)
+Completed 200 OK in 63ms (Views: 45.9ms | ActiveRecord: 3.7ms | Allocations: 52697)
+
+
+Started GET "/register" for 127.0.0.1 at 2022-06-02 17:31:09 +0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered main/_navbar.html.erb (Duration: 0.6ms | Allocations: 549)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3245)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 3594)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:31:17 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f4ee8c9aea8>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "mes"], ["email", "mesxiana3@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-06-02 13:31:17.307973"], ["updated_at", "2022-06-02 13:31:17.307973"]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+Redirected to http://127.0.0.1:3000/articles/new
+Completed 302 Found in 264ms (ActiveRecord: 3.2ms | Allocations: 3795)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-06-02 17:31:17 +0400
+Processing by ArticlesController#new as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3558)
+  Rendered main/_navbar.html.erb (Duration: 0.6ms | Allocations: 508)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 6709)
+Completed 200 OK in 24ms (Views: 10.2ms | ActiveRecord: 3.3ms | Allocations: 16844)
+
+
+Started GET "/logout" for 127.0.0.1 at 2022-06-02 17:33:55 +0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#log_out as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 2978)
+
+
+Started GET "/" for 127.0.0.1 at 2022-06-02 17:33:55 +0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:2
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."created_at" DESC[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1847)
+  Rendered main/_navbar.html.erb (Duration: 1.2ms | Allocations: 857)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 41258)
+Completed 200 OK in 53ms (Views: 43.0ms | ActiveRecord: 1.9ms | Allocations: 49066)
+
+
+Started GET "/register" for 127.0.0.1 at 2022-06-02 17:33:57 +0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 255)
+  Rendered main/_navbar.html.erb (Duration: 1.4ms | Allocations: 572)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3595)
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 2.5ms | Allocations: 10395)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:34:10 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f586cd551f8>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered main/_navbar.html.erb (Duration: 0.6ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3132)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4822)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:34:12 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f585c9d50d8>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered main/_navbar.html.erb (Duration: 0.7ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3085)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 4322)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:34:13 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f585cb07f28>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered main/_navbar.html.erb (Duration: 0.5ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3085)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4324)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:34:13 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f585cb68288>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered main/_navbar.html.erb (Duration: 0.6ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3084)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4292)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:34:13 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f586ceec098>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 15)
+  Rendered main/_navbar.html.erb (Duration: 0.6ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3084)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 4316)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:34:13 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f586cf2ee48>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered main/_navbar.html.erb (Duration: 0.5ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3084)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 4304)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:34:13 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f586d0185c0>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered main/_navbar.html.erb (Duration: 0.9ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3084)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 4304)
+
+
+Started PUT "/save_user" for 127.0.0.1 at 2022-06-02 17:34:23 +0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000055867d88b428>, params: {"_method"=>"put", "user"=>{"username"=>"mes", "email"=>"mesxiana3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "mes"], ["email", "mesxiana3@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-06-02 13:34:24.069745"], ["updated_at", "2022-06-02 13:34:24.069745"]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+Redirected to http://127.0.0.1:3000/articles/new
+Completed 302 Found in 270ms (ActiveRecord: 7.3ms | Allocations: 6725)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-06-02 17:34:24 +0400
+Processing by ArticlesController#new as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3561)
+  Rendered main/_navbar.html.erb (Duration: 0.5ms | Allocations: 511)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 18615)
+Completed 200 OK in 29ms (Views: 16.4ms | ActiveRecord: 2.4ms | Allocations: 28019)
+
+
