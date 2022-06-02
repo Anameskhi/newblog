@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-
-  has_many :articles
-  has_many :comments
+has_secure_password
+has_many :articles
 validates :username, presence: true
 validates :email, presence: true
 validates :password, presence: true

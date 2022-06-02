@@ -25,7 +25,7 @@
     <%= flash[:alert] %>
   </div>
 <% end %>
-  <%=render partial:'main/navbar'%>
+  <%=render partial:'main/navbar',current_user: @current_user%>
 
     <%= yield %>
   </body>

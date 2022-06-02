@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :current_user
   
   def index
-    @articles = Article.all
+    @articles = Article.order(created_at: :desc).all
   end
 
   def show

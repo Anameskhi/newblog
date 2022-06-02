@@ -14,4 +14,11 @@ Rails.application.routes.draw do
 
  get "/users", to: 'users#index'
 
+ get '/signin', to: 'users#signin', as: :signin_user
+
+ post '/login', to:'users#login', as: :login_user
+
+ get '/logout', to:'users#log_out'
+
+
 end
