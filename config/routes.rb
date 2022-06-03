@@ -20,5 +20,9 @@ Rails.application.routes.draw do
 
  get '/logout', to:'users#log_out'
 
+ get '/editprofile', to:'users#editprofile'
+
+ patch '/editprofile', to:'users#save_editied_profile', as: :edit_profile
+
 
 end

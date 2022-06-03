@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :current_user
-  
+  before_action :check_session, :except => [:show, :index]
+
   def index
     @articles = Article.order(created_at: :desc).all
   end
@@ -50,7 +51,14 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :body)
   end
 
+  def check_session
+    unless session[:user_id]
+      flash[:alert] = "You need user account to post something"
+      redirect_to signin_user_path
 
+
+    end
+  end
 
  
 end
